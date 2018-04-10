@@ -1,0 +1,645 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="title">
+				这是 [黄山水务-监控-2-1] 选项卡，该页面展示"综合监控"。
+			</div>
+
+			<div class="title">
+				--- 生产制水 --- (利用百度echarts官方图例)
+			</div>
+
+			<div class="mui-content">
+				<div class="mui-row">
+					<div class="mui-col-sm-6 mui-col-xs-6">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>源水压力(MPa)</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-sm-1" style="height: 160px;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mui-col-sm-6 mui-col-xs-6">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>源水瞬间流量(m3/h)</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-sm-2" style="height: 160px;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mui-col-sm-6 mui-col-xs-6">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂1#瞬间流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-sm-3" style="height: 160px;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mui-col-sm-6 mui-col-xs-6">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂2#瞬间流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-sm-4" style="height: 160px;"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>源水压力、流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>出水瞬时流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-1" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂#1日出水流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-2" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂#1月出水流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-3" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂#2日出水流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-4" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>水厂#2月出水流量</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-5" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="title">
+				--- 管网 --- (利用百度echarts官方图例)
+			</div>
+			<div class="mui-content">
+				<div class="mui-row">
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>材质</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-6" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>类型</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-7" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-sm-12 mui-col-xs-12">
+						<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+							<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+								<span>口径</span>
+							</div>
+							<div class="panel-body">
+								<div id="totalwork-test-8" style="height: 250px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/echarts.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+
+			/**
+			 * echarts
+			 */
+			var myChartTWTestSm1 = echarts.init(document.getElementById('totalwork-test-sm-1'));
+			var myChartTWTestSm2 = echarts.init(document.getElementById('totalwork-test-sm-2'));
+			var myChartTWTestSm3 = echarts.init(document.getElementById('totalwork-test-sm-3'));
+			var myChartTWTestSm4 = echarts.init(document.getElementById('totalwork-test-sm-4'));
+
+			var myChartTWTest = echarts.init(document.getElementById('totalwork-test'));
+			var myChartTWTest1 = echarts.init(document.getElementById('totalwork-test-1'));
+			var myChartTWTest2 = echarts.init(document.getElementById('totalwork-test-2'));
+			var myChartTWTest3 = echarts.init(document.getElementById('totalwork-test-3'));
+			var myChartTWTest4 = echarts.init(document.getElementById('totalwork-test-4'));
+			var myChartTWTest5 = echarts.init(document.getElementById('totalwork-test-5'));
+			var myChartTWTest6 = echarts.init(document.getElementById('totalwork-test-6'));
+			var myChartTWTest7 = echarts.init(document.getElementById('totalwork-test-7'));
+			var myChartTWTest8 = echarts.init(document.getElementById('totalwork-test-8'));
+
+			var optionTWTestSm1 = {
+				tooltip: {
+					formatter: "{a} <br/>{b} : {c}%"
+				},
+				series: [{
+					name: '业务指标',
+					type: 'gauge',
+					detail: {
+						formatter: '{value}%',
+						textStyle: {
+							fontSize: 18
+						}
+					},
+					center: ['50%', '60%'], // 默认全局居中  
+					startAngle: 180,
+					endAngle: 0,
+					radius: 70,
+					min: 0,
+					max: 1,
+					splitNumber: 10,
+					axisLine: { // 坐标轴线  
+						lineStyle: { // 属性lineStyle控制线条样式  
+							color: [
+								[0.0, 'lime'],
+								[0.5, '#e5cf0d'],
+								[1, '#95706d']
+							],
+							width: 10
+						}
+					},
+					pointer: { // 分隔线  
+						color: '#C3B5E1',
+						width: 5,
+						length: 65
+					},
+					data: [{
+						value: 50,
+						name: ''
+					}]
+				}]
+			};
+
+			var optionTWTestSm2 = {
+				tooltip: {
+					formatter: "{a} <br/>{b} : {c}%"
+				},
+				series: [{
+					name: '业务指标',
+					type: 'gauge',
+					detail: {
+						formatter: '{value}%',
+						textStyle: {
+							fontSize: 18
+						}
+					},
+					center: ['50%', '60%'], // 默认全局居中  
+					startAngle: 180,
+					endAngle: 0,
+					radius: 70,
+					min: 0,
+					max: 1,
+					splitNumber: 10,
+					axisLine: { // 坐标轴线  
+						lineStyle: { // 属性lineStyle控制线条样式  
+							color: [
+								[0.0, 'lime'],
+								[0.5, '#D97A80'],
+								[1, '#97b552']
+							],
+							width: 10
+						}
+					},
+					pointer: { // 分隔线  
+						color: '#C3B5E1',
+						width: 5,
+						length: 65
+					},
+					data: [{
+						value: 50,
+						name: ''
+					}]
+				}]
+			};
+
+			var optionTWTestSm3 = {
+				tooltip: {
+					formatter: "{a} <br/>{b} : {c}%"
+				},
+				series: [{
+					name: '业务指标',
+					type: 'gauge',
+					detail: {
+						formatter: '{value}%',
+						textStyle: {
+							fontSize: 18
+						}
+					},
+					center: ['50%', '60%'], // 默认全局居中  
+					startAngle: 180,
+					endAngle: 0,
+					radius: 70,
+					min: 0,
+					max: 1,
+					splitNumber: 10,
+					axisLine: { // 坐标轴线  
+						lineStyle: { // 属性lineStyle控制线条样式  
+							color: [
+								[0.0, 'lime'],
+								[0.5, '#5BB0F0'],
+								[1, '#FFB880']
+							],
+							width: 10
+						}
+					},
+					pointer: { // 分隔线  
+						color: '#C3B5E1',
+						width: 5,
+						length: 65
+					},
+					data: [{
+						value: 50,
+						name: ''
+					}]
+				}]
+			};
+
+			var optionTWTestSm4 = {
+				tooltip: {
+					formatter: "{a} <br/>{b} : {c}%"
+				},
+				series: [{
+					name: '业务指标',
+					type: 'gauge',
+					detail: {
+						formatter: '{value}%',
+						textStyle: {
+							fontSize: 18
+						}
+					},
+					center: ['50%', '60%'], // 默认全局居中  
+					startAngle: 180,
+					endAngle: 0,
+					radius: 70,
+					min: 0,
+					max: 1,
+					splitNumber: 10,
+					axisLine: { // 坐标轴线  
+						lineStyle: { // 属性lineStyle控制线条样式  
+							color: [
+								[0.0, 'lime'],
+								[0.5, '#4DB7AD'],
+								[1, '#C3B5E1']
+							],
+							width: 10
+						}
+					},
+					pointer: { // 分隔线  
+						color: '#C3B5E1',
+						width: 5,
+						length: 65
+					},
+					data: [{
+						value: 50,
+						name: ''
+					}]
+				}]
+			};
+
+			var optionTWTest = {
+
+				tooltip: {
+					trigger: 'axis'
+				},
+				legend: {
+					data: ['蒸发量', '降水量']
+				},
+				color: ['#4DB7AD', '#C3B5E1', '#5BB0F0', '#FFB880', '#D97A80', '#97b552', '#e5cf0d', '#95706d', '#8d98b3'],
+				calculable: true,
+				xAxis: [{
+					type: 'category',
+					data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+				}],
+				yAxis: [{
+					type: 'value'
+				}],
+				series: [{
+						name: '蒸发量',
+						type: 'bar',
+						data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+						markPoint: {
+							data: [{
+									type: 'max',
+									name: '最大值'
+								},
+								{
+									type: 'min',
+									name: '最小值'
+								}
+							]
+						},
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					},
+					{
+						name: '降水量',
+						type: 'bar',
+						data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+						markPoint: {
+							data: [{
+									name: '年最高',
+									value: 182.2,
+									xAxis: 7,
+									yAxis: 183
+								},
+								{
+									name: '年最低',
+									value: 2.3,
+									xAxis: 11,
+									yAxis: 3
+								}
+							]
+						},
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					}
+				]
+			};
+
+			var optionTWTest1 = {
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [{
+					data: [820, 932, 901, 934, 1290, 1330, 1320],
+					type: 'line'
+				}]
+			};
+
+			var optionTWTest2 = {
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: [{
+					data: [120, 200, 150, 80, 70, 110, 130],
+					type: 'bar'
+				}]
+			};
+			var optionTWTest3 = {
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				color: ["green"],
+				series: [{
+					data: [120, 200, 150, 80, 70, 110, 130],
+					type: 'bar'
+				}]
+			};
+			var optionTWTest4 = {
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				color: ["blue"],
+				series: [{
+					data: [120, 200, 150, 80, 70, 110, 130],
+					type: 'bar'
+				}]
+			};
+
+			var optionTWTest5 = {
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				yAxis: {
+					type: 'value'
+				},
+				color: ["yellow"],
+				series: [{
+					data: [120, 200, 150, 80, 70, 110, 130],
+					type: 'bar'
+				}]
+			};
+			var optionTWTest6 = {
+
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['pe管', '钢管', '球墨铸铁', '碽']
+				},
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: [{
+							value: 335,
+							name: 'pe管'
+						},
+						{
+							value: 310,
+							name: '钢管'
+						},
+						{
+							value: 234,
+							name: '球墨铸铁'
+						},
+						{
+							value: 135,
+							name: '碽'
+						}
+					],
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}]
+			};
+			var optionTWTest7 = {
+
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['pe管', '钢管', '球墨铸铁', '碽']
+				},
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: [{
+							value: 335,
+							name: 'pe管'
+						},
+						{
+							value: 310,
+							name: '钢管'
+						},
+						{
+							value: 234,
+							name: '球墨铸铁'
+						},
+						{
+							value: 135,
+							name: '碽'
+						}
+					],
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}]
+			};
+			var optionTWTest8 = {
+
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c} ({d}%)"
+				},
+				legend: {
+					orient: 'vertical',
+					left: 'left',
+					data: ['pe管', '钢管', '球墨铸铁', '碽']
+				},
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '55%',
+					center: ['50%', '60%'],
+					data: [{
+							value: 335,
+							name: 'pe管'
+						},
+						{
+							value: 310,
+							name: '钢管'
+						},
+						{
+							value: 234,
+							name: '球墨铸铁'
+						},
+						{
+							value: 135,
+							name: '碽'
+						}
+					],
+					itemStyle: {
+						emphasis: {
+							shadowBlur: 10,
+							shadowOffsetX: 0,
+							shadowColor: 'rgba(0, 0, 0, 0.5)'
+						}
+					}
+				}]
+			};
+
+			myChartTWTestSm1.setOption(optionTWTestSm1);
+			myChartTWTestSm2.setOption(optionTWTestSm2);
+			myChartTWTestSm3.setOption(optionTWTestSm3);
+			myChartTWTestSm4.setOption(optionTWTestSm4);
+			myChartTWTest.setOption(optionTWTest);
+			myChartTWTest1.setOption(optionTWTest1);
+			myChartTWTest2.setOption(optionTWTest2);
+			myChartTWTest3.setOption(optionTWTest3);
+			myChartTWTest4.setOption(optionTWTest4);
+			myChartTWTest5.setOption(optionTWTest5);
+			myChartTWTest6.setOption(optionTWTest6);
+			myChartTWTest7.setOption(optionTWTest7);
+			myChartTWTest8.setOption(optionTWTest8);
+		</script>
+	</body>
+
+</html>

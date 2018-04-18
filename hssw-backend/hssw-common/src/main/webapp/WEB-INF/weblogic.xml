@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-web-app>
+
+	<!-- 定义Session名称，防止相同域下Session失效问题 -->
+	<session-descriptor>
+		<cookie-name>JSESSIONID_SPARKNET</cookie-name>
+		<!-- 解决会话cookie中缺少HttpOnly属性漏洞 -->
+		<cookie-http-only>true</cookie-http-only>
+	</session-descriptor>
+
+	<!-- 定义字符集编码 -->
+	<charset-params>
+		<input-charset>
+			<resource-path>/*</resource-path>
+			<java-charset-name>UTF-8</java-charset-name>
+		</input-charset>
+	</charset-params>
+
+	<!-- 优先加载应用中的jar包 -->
+	<container-descriptor>
+		<prefer-application-packages>
+			<package-name>javax.persistence.*</package-name>
+		</prefer-application-packages>
+	</container-descriptor>
+
+</weblogic-web-app> 

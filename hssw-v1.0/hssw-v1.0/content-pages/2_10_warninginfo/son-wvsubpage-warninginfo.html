@@ -71,7 +71,10 @@
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/echarts.min.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
+			mui.Back = function() {
+				plus.webview.currentWebview().close();
+			}
 		</script>
 	</body>
 

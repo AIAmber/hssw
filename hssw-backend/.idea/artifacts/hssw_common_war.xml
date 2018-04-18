@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hssw-common:war">
+    <output-path>$PROJECT_DIR$/hssw-common/target</output-path>
+    <root id="archive" name="hssw-common.war">
+      <element id="artifact" artifact-name="hssw-common:war exploded" />
+    </root>
+  </artifact>
+</component>

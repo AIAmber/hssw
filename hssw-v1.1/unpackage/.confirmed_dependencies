@@ -1,0 +1,307 @@
+{
+	"hssw-v1.0/content-pages/2_1_totalwork/son-wvsubpage-totalwork.html": {
+		"resources": [
+			"hssw-v1.0/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/js/echarts.min.js",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/tab-webview-subpage-setting.html": {
+		"resources": [
+			"hssw-v1.0/fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/tab-webview-subpage-about.html": {
+		"resources": [
+			"hssw-v1.0/img/icon/water.png",
+			"hssw-v1.0/img/icon/watereal.png",
+			"hssw-v1.0/img/background/5.jpg",
+			"hssw-v1.0/img/background/6.jpg",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/plugins/font-awesome/css/font-awesome.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/tab-webview-main.html": {
+		"resources": [
+			"hssw-v1.0/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.0/tab-webview-subpage-about.html",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/plugins/font-awesome/css/font-awesome.css",
+			"hssw-v1.0/js/mui.min.js",
+			"hssw-v1.0/fonts/mui.ttf"
+		],
+		"refer": [
+			"hssw-v1.0/tab-webview-subpage-setting.html",
+			"hssw-v1.0/tab-webview-subpage-contact.html",
+			"hssw-v1.0/tab-webview-subpage-about.html",
+			"hssw-v1.0/tab-webview-subpage-chat.html"
+		]
+	},
+	"hssw-v1.0/tab-webview-subpage-chat.html": {
+		"resources": [
+			"hssw-v1.0/content-pages/2_1_totalwork/son-wvsubpage-totalwork.html",
+			"hssw-v1.0/js/jquery.min.js",
+			"hssw-v1.0/img/carrousel/3.jpg",
+			"hssw-v1.0/img/carrousel/4.jpg",
+			"hssw-v1.0/img/carrousel/2.jpg",
+			"hssw-v1.0/img/carrousel/1.jpg",
+			"hssw-v1.0/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/plugins/font-awesome/css/font-awesome.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": [
+			"hssw-v1.0/content-pages/2_1_totalwork/son-wvsubpage-totalwork.html",
+			"hssw-v1.0/content-pages/2_3_pipegis/son-wvsubpage-pipegis.html",
+			"hssw-v1.0/content-pages/2_2_workwatch/son-wvsubpage-workwatch.html",
+			"hssw-v1.0/content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html",
+			"hssw-v1.0/content-pages/2_6_flowwatch/son-wvsubpage-flowwatch.html",
+			"hssw-v1.0/content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html",
+			"hssw-v1.0/content-pages/2_9_watercycle/son-wvsubpage-watercycle.html",
+			"hssw-v1.0/content-pages/2_7_pumpstation/son-wvsubpage-pumpstation.html",
+			"hssw-v1.0/content-pages/2_11_vediowatch/son-wvsubpage-vediowatch.html",
+			"hssw-v1.0/content-pages/2_8_wateruse/son-wvsubpage-wateruse.html",
+			"hssw-v1.0/content-pages/2_10_warninginfo/son-wvsubpage-warninginfo.html"
+		]
+	},
+	"hssw-v1.0/tab-webview-subpage-contact.html": {
+		"resources": [
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/content-pages/2_2_workwatch/son-wvsubpage-workwatch.html": {
+		"resources": [
+			"hssw-v1.0/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/content-pages/2_3_pipegis/son-wvsubpage-pipegis.html": {
+		"resources": [
+			"hssw-v1.0/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html": {
+		"resources": [
+			"hssw-v1.0/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html": {
+		"resources": [
+			"hssw-v1.0/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.0/css/mui.min.css",
+			"hssw-v1.0/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.0/content-pages/2_10_warninginfo/son-wvsubpage-warninginfo.html": {
+		"resources": [
+			"hssw-v1.0/js/echarts.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/tab-webview-main.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/tab-webview-subpage-about.html",
+			"hssw-v1.1/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.1/plugins/font-awesome/css/font-awesome.css",
+			"hssw-v1.1/fonts/mui.ttf"
+		],
+		"refer": [
+			"hssw-v1.1/tab-webview-subpage-setting.html",
+			"hssw-v1.1/tab-webview-subpage-chat.html",
+			"hssw-v1.1/tab-webview-subpage-about.html",
+			"hssw-v1.1/tab-webview-subpage-contact.html"
+		]
+	},
+	"hssw-v1.1/tab-webview-subpage-chat.html": {
+		"resources": [
+			"hssw-v1.1/img/carrousel/2.jpg",
+			"hssw-v1.1/img/carrousel/3.jpg",
+			"hssw-v1.1/img/carrousel/1.jpg",
+			"hssw-v1.1/js/jquery.min.js",
+			"hssw-v1.1/img/carrousel/4.jpg",
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.1/plugins/font-awesome/css/font-awesome.css"
+		],
+		"refer": [
+			"hssw-v1.1/content-pages/2_1_totalwork/son-wvsubpage-totalwork.html",
+			"hssw-v1.1/content-pages/2_2_workwatch/son-wvsubpage-workwatch.html",
+			"hssw-v1.1/content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html",
+			"hssw-v1.1/content-pages/2_11_vediowatch/son-wvsubpage-vediowatch.html",
+			"hssw-v1.1/content-pages/2_6_flowwatch/son-wvsubpage-flowwatch.html",
+			"hssw-v1.1/content-pages/2_8_wateruse/son-wvsubpage-wateruse.html",
+			"hssw-v1.1/content-pages/2_10_warninginfo/son-wvsubpage-warninginfo.html",
+			"hssw-v1.1/content-pages/2_9_watercycle/son-wvsubpage-watercycle.html",
+			"hssw-v1.1/content-pages/2_7_pumpstation/son-wvsubpage-pumpstation.html",
+			"hssw-v1.1/content-pages/2_3_pipegis/son-wvsubpage-pipegis.html",
+			"hssw-v1.1/content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html",
+			"hssw-v1.1/content-pages/2_12_more/son-wvsubpage-more.html"
+		]
+	},
+	"hssw-v1.1/tab-webview-subpage-about.html": {
+		"resources": [
+			"hssw-v1.1/img/background/6.jpg",
+			"hssw-v1.1/img/background/5.jpg",
+			"hssw-v1.1/img/icon/watereal.png",
+			"hssw-v1.1/img/icon/water.png",
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.1/plugins/font-awesome/css/font-awesome.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_1_totalwork/son-wvsubpage-totalwork.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/echarts.min.js",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/tab-webview-subpage-contact.html": {
+		"resources": [
+			"hssw-v1.1/fonts/mui.ttf",
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/font-awesome/fonts/fontawesome-webfont.woff2",
+			"hssw-v1.1/plugins/font-awesome/css/font-awesome.css"
+		],
+		"refer": [
+			"hssw-v1.1/content-pages/3_4_testreport/son-wvsubpage-testreport.html",
+			"hssw-v1.1/content-pages/3_3_billquery/son-wvsubpage-billquery.html",
+			"hssw-v1.1/content-pages/3_2_longcheck/son-wvsubpage-longcheck.html"
+		]
+	},
+	"hssw-v1.1/content-pages/2_2_workwatch/son-wvsubpage-workwatch.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/tab-webview-subpage-setting.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_11_vediowatch/son-wvsubpage-vediowatch.html": {
+		"resources": [
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css",
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_10_warninginfo/son-wvsubpage-warninginfo.html": {
+		"resources": [
+			"hssw-v1.1/js/echarts.min.js",
+			"hssw-v1.1/fonts/mui.ttf"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_3_pipegis/son-wvsubpage-pipegis.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		],
+		"refer": []
+	},
+	"hssw-v1.1/content-pages/2_6_flowwatch/son-wvsubpage-flowwatch.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/2_8_wateruse/son-wvsubpage-wateruse.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/2_9_watercycle/son-wvsubpage-watercycle.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/2_7_pumpstation/son-wvsubpage-pumpstation.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/2_12_more/son-wvsubpage-more.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/3_4_testreport/son-wvsubpage-testreport.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/3_3_billquery/son-wvsubpage-billquery.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	},
+	"hssw-v1.1/content-pages/3_2_longcheck/son-wvsubpage-longcheck.html": {
+		"resources": [
+			"hssw-v1.1/css/mui.min.css",
+			"hssw-v1.1/js/mui.min.js",
+			"hssw-v1.1/plugins/bootstrap/css/bootstrap.min.css"
+		]
+	}
+}

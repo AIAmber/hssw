@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="divA"></div>
+</body>
+<script src="../common/jquery/jquery.min.js"></script>
+<script>
+    $.ajax({
+        url:"../LoginController/session",
+        success:function(result){
+            if(true == result.success){
+                $("#divA").html(result.bean.name);
+                console.log("aaa");
+            }
+            if(false == result.success){
+                $("#divA").html("请登录");
+            }
+
+
+            console.log(result.success); // true or false
+        },
+        error:function () {
+            console.log("xxx");
+        }
+    })
+</script>
+</html>

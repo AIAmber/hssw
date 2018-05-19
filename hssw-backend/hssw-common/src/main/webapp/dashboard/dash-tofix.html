@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../common/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">xxx</span>
+                <span class="icon-bar">xxx</span>
+                <span class="icon-bar">xxx</span>
+            </button>
+            <p class="navbar-brand">黄山水务后台管理系统</p>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="./dashboard.html">首页</a></li>
+                <li class="active"><a href="dash-tofix.html">巡检报修</a></li>
+                <li><a href="./dash-hotline.html">热线工单</a></li>
+                <li><a href="./dash-feedback.html">用户反馈</a></li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div id="divA" style="height: 100px"></div>
+
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <!--<div class="col-xs-12 col-sm-9">-->
+            <!--<ul class="nav nav-tabs">-->
+                <!--<li id="list" role="presentation" class="active"><a href="#">报修列表</a></li>-->
+                <!--&lt;!&ndash;<li id="detail" role="presentation"><a href="#">详情</a></li>&ndash;&gt;-->
+                <!--&lt;!&ndash;<li role="presentation"><a href="#">Messages</a></li>&ndash;&gt;-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="col-xs-12 col-sm-12">
+            <table class="row-table table table-condensed table-hover" style="width: 100%;">
+                <thead>
+                <tr>
+                    <th style="border-bottom-color: #5BB0F0;">工单Id</th>
+                    <th style="border-bottom-color: #5BB0F0;">标题</th>
+                    <th style="border-bottom-color: #5BB0F0;">问题描述</th>
+                    <th style="border-bottom-color: #5BB0F0;">巡检人</th>
+                    <th style="border-bottom-color: #5BB0F0;">手机号</th>
+                    <th style="border-bottom-color: #5BB0F0;">区域</th>
+                    <th style="border-bottom-color: #5BB0F0;">地址</th>
+                </tr>
+                </thead>
+                <tbody class="fixList">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer style="margin-bottom: 50px;">
+        <p>合肥工业大学黄山水务毕业设计团队 &copy; Company 2014</p>
+    </footer>
+</div>
+
+<div style="display: none;">
+    <table class="table table-condensed table-nobody" id="info-detail">
+        <tbody>
+        <tr>
+            <td style="width: 120px" class="text-right">标题：</td>
+            <td style="width: 300px" class="errorDesc"></td>
+        </tr>
+        <tr>
+            <td class="text-right">问题描述：</td>
+            <td class="endpointPerson"></td>
+        </tr>
+        <tr>
+            <td class="text-right">巡检人电话：</td>
+            <td class="endpointTel"></td>
+        </tr>
+        <tr>
+            <td class="text-right">巡检人：</td>
+            <td class="endpointPerson"></td>
+        </tr>
+        <tr>
+            <td class="text-right">巡检区域：</td>
+            <td class="endpointArea"></td>
+        </tr>
+        <tr>
+            <td class="text-right">巡检地址：</td>
+            <td style="width: 300px" class="endpointAddr"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+<script src="../common/jquery/jquery.min.js"></script>
+<script src="../common/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script>
+
+    $.ajax({
+        type: "post",
+        async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url: "../DashboardController/fixList", //
+        data: {},
+        dataType: "json", //返回数据形式为json
+        timeout: 5000,
+        success: function (result) {
+            var htmlContent = "";
+
+            for (var i = 0; i < result.bean.length; i++) {
+                htmlContent += "<tr><td>"+ result.bean[i].HL_NO +"</td>" +
+                    "<td>"+ result.bean[i].HL_TITLE +"</td>" +
+                    "<td>"+ result.bean[i].HL_CONTENT +"</td>" +
+                    "<td>"+ result.bean[i].HL_FPERSON +"</td>" +
+                    "<td>"+ result.bean[i].HL_FPHONE +"</td>" +
+                    "<td>"+ result.bean[i].HL_AREA +"</td>" +
+                    "<td>"+ result.bean[i].HL_ADDR +"</td></tr>";
+            }
+
+            $(".fixList").html(htmlContent);
+        },
+        error: function (errorMsg) {
+            //请求失败时执行该函数
+            console.log("当前网络出现异常！");
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--<div class="title">
+				<p>这是 [黄山水务-首页] 选项卡，第1个子页面</p>
+				<p>本首页以卡片形式展现给用户</p>
+			</div>-->
+
+			<div class="mui-card">
+				<!--页眉，放置标题-->
+				<div class="mui-card-header mui-card-media">
+					<img src="img/icon/water.png" />
+					<div class="mui-media-body">
+						欢迎进入黄山水务系统测试页面
+						<p>发表于 2018-04-10 15:57</p>
+					</div>
+				</div>
+				<!--内容区-->
+				<div class="mui-card-content">
+					<img src="img/background/6.jpg"/>
+				</div>
+				<!--页脚，放置补充信息或支持的操作-->
+				<div class="mui-card-footer">
+					<a><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+					<a>查看详情</a>
+				</div>
+			</div>
+			
+			<div class="mui-card">
+				<!--页眉，放置标题-->
+				<div class="mui-card-header mui-card-media">
+					<img src="img/icon/watereal.png" />
+					<div class="mui-media-body">
+						黄山水务查询服务系统上线了
+						<p>发表于 2018-04-10 15:30</p>
+					</div>
+				</div>
+				<!--内容区-->
+				<div class="mui-card-content">
+					<img src="img/background/5.jpg"/>
+				</div>
+				<!--页脚，放置补充信息或支持的操作-->
+				<div class="mui-card-footer">
+					<a><i class="fa fa-heart" aria-hidden="true"></i></a>
+					<a>查看详情</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+	</script>
+
+</html>

@@ -3,21 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="../common/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-<div id="divA"></div>
+<div id="divA" style="height: 100px"></div>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">xxx</span>
+                <span class="icon-bar">xxx</span>
+                <span class="icon-bar">xxx</span>
+            </button>
+            <p class="navbar-brand">黄山水务后台管理系统</p>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="./dashboard.html">首页</a></li>
+                <li><a href="dash-tofix.html">巡检报修</a></li>
+                <li><a href="./dash-hotline.html">热线工单</a></li>
+                <li><a href="./dash-feedback.html">用户反馈</a></li>
+            </ul>
+        </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+</nav><!-- /.navbar -->
+
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron">
+                <h1 id="dash-h1">Hello, <span id="dash-username"></span></h1>
+                <p>您好，欢迎来到黄山水务后台管理页面</p>
+
+                <p>目前已添加的功能：</p>
+                <p><span id="feature-1">巡检报修</span>、<span id="feature-2">用户反馈</span></p>
+                <p>尚未添加的功能：</p>
+                <p><span id="unfeature-1">热线工单</span></p>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+            </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">水务服务</a>
+                <a href="#" class="list-group-item">费用查询</a>
+                <a href="#" class="list-group-item">巡检报修</a>
+                <a href="#" class="list-group-item">远程抄表</a>
+                <a href="#" class="list-group-item">热线工单</a>
+                <a href="#" class="list-group-item">系统管理</a>
+                <a href="#" class="list-group-item">用户管理</a>
+                <a href="#" class="list-group-item">消息管理</a>
+                <a href="#" class="list-group-item">监控日志</a>
+                <a href="#" class="list-group-item">用户反馈</a>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+    </div><!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>合肥工业大学黄山水务毕业设计团队 &copy; Company 2014</p>
+    </footer>
+
+</div><!--/.container-->
+<div class="row">
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img id="preview_edit1" src="../common/img/pic.png">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+            <img id="preview_edit2" src="../common/img/pic.png">
+        </a>
+    </div>
+    <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+        <img id="preview_edit3" src="../common/img/pic.png">
+    </a>
+</div><div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+        <img id="preview_edit4" src="../common/img/pic.png">
+    </a>
+</div>
+
+</div>
+
+<div style="margin-bottom:32px">
+    <img id="preview_edit" src="../common/img/pic.png"  onerror="this.src='../common/img/pic.png'">
+    <div id="btnGroup_edit">
+        <a id="uploadUserPhoto_edit" class="btn btn-default btn-sm" style="float: left;">上传
+            <input type="file" name="PHOTO_edit" id="PHOTO_edit" />
+        </a>
+        <a id="deleteUserPhoto_edit"  class="btn btn-default btn-sm"  style="float: right;cursor: pointer">删除</a>
+    </div>
+    <input type="hidden" name="photofilePath_edit">
+</div>
 </body>
 <script src="../common/jquery/jquery.min.js"></script>
+<script src="../common/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/dashboard.js"></script>
 <script>
+    // CSS *****************************
+    var fontId = [];
+    var unfontId = [];
+    fontId.push("#feature-1", "#feature-2");
+    unfontId.push("#unfeature-1");
+    for(var i=0; i<fontId.length; i++){
+        $(fontId[i]).css("color", "#6ed100");
+    } // green
+    for(var i=0; i<unfontId.length; i++){
+        $(unfontId[i]).css("color", "red");
+    } // red
+    //***************************************
     $.ajax({
         url:"../LoginController/session",
         success:function(result){
             if(true == result.success){
-                $("#divA").html(result.bean.name);
+                $("#dash-username").html(result.bean.name);
                 console.log("aaa");
             }
             if(false == result.success){
-                $("#divA").html("请登录");
+                $("#dash-h1").html("请登录");
             }
 
 
@@ -26,6 +171,7 @@
         error:function () {
             console.log("xxx");
         }
-    })
+    });
+
 </script>
 </html>

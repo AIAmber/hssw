@@ -39,6 +39,8 @@ public class LoginController {
     @ResponseBody
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         HttpSession session=request.getSession();
         if (!"POST".equals(request.getMethod())) {
             this.sendRedirect(false, "来自不安全的网站登录", session, request, response);
@@ -79,6 +81,8 @@ public class LoginController {
      */
     @RequestMapping("/loginOut")
     public void loginOut(HttpServletRequest request, HttpServletResponse response){
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         try{
             HttpSession session=request.getSession();
             if(null!=session){
@@ -100,6 +104,8 @@ public class LoginController {
     @ResponseBody
     @RequestMapping("/session")
     public EditJson session(HttpServletRequest request, HttpServletResponse response){
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         EditJson editJson = new EditJson();
         Map<String, Object> sessionMap = new HashMap<String, Object>();
         HttpSession session=request.getSession();
@@ -121,10 +127,12 @@ public class LoginController {
      * 页面跳转
      */
     private void sendRedirect(boolean success,String errorinfo,HttpSession session,HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         if(success){
             //跳转到首页
             session.removeAttribute("errorinfo");
-            response.sendRedirect(request.getContextPath()+"/index.jsp#/home");
+            response.sendRedirect(request.getContextPath()+"/dashboard/dashboard.html");
         }else{
             //跳转到登录页
             session.setAttribute("errorinfo", "<img src=\""+request.getContextPath()+"/login/images/error.png\"/> "+errorinfo);

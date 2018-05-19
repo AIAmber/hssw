@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+			
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			
+			.oa-contact-content {
+				width: 100%;
+			}
+			
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			
+			.oa-contact-name,
+			oa-contact-position {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<!--<div class="title">
+				这是 [黄山水务-服务] 选项卡，第3个子页面，该页面展示一个智慧水务服务示例
+			</div>-->
+
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					<a id="waterservice" class="mui-navigate-right"><i class="fa fa-eercast" aria-hidden="true"></i> 水务服务</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a id="longcheck" class="mui-navigate-right"><i class="fa fa-gg-circle" aria-hidden="true"></i> 远程抄表</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a id="billquery" class="mui-navigate-right"><i class="fa fa-file-text-o" aria-hidden="true"></i> 费用查询</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a id="testreport" class="mui-navigate-right"><i class="fa fa-gavel" aria-hidden="true"></i> 巡检报修</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a id="hotline" class="mui-navigate-right"><i class="fa fa-fax" aria-hidden="true"></i> 热线工单</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view mui-table-view-chevron" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a id="response" class="mui-navigate-right"><i class="fa fa-envelope" aria-hidden="true"></i> 问题反馈</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		var wv3_subpages = ['content-pages/3_1_waterservice/son-wvsubpage-waterservice.html',
+			'content-pages/3_2_longcheck/son-wvsubpage-longcheck.html',
+			'content-pages/3_3_billquery/son-wvsubpage-billquery.html',
+			'content-pages/3_4_testreport/son-wvsubpage-testreport.html',
+			'content-pages/3_5_hotline/son-wvsubpage-hotline.html',
+			'content-pages/3_6_response/son-wvsubpage-response.html'
+		];
+
+		// 3-1 waterservice
+		mui(".mui-table-view").on('tap', '#waterservice', function() {
+			mui.openWindow({
+				url: wv3_subpages[0],
+				id: "waterservice-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+		
+		// 3-2 longcheck
+		mui(".mui-table-view").on('tap', '#longcheck', function() {
+			mui.openWindow({
+				url: wv3_subpages[1],
+				id: "longcheck-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+		
+		// 3-3 billquery
+		mui(".mui-table-view").on('tap', '#billquery', function() {
+			mui.openWindow({
+				url: wv3_subpages[2],
+				id: "billquery-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+		
+		// 3-4 testreport
+		mui(".mui-table-view").on('tap', '#testreport', function() {
+			mui.openWindow({
+				url: wv3_subpages[3],
+				id: "testreport-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+		
+		// 3-5 hotline
+		mui(".mui-table-view").on('tap', '#hotline', function() {
+			mui.openWindow({
+				url: wv3_subpages[4],
+				id: "hotline-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+		
+		// 3-6 response
+		mui(".mui-table-view").on('tap', '#response', function() {
+			mui.openWindow({
+				url: wv3_subpages[5],
+				id: "response-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+	</script>
+
+</html>

@@ -10,11 +10,11 @@
 
 		<link rel="stylesheet" href="css/mui.min.css">
 		<style>
-			<style>
 			html,
 			body {
 				background-color: #efeff4;
 			}
+			
 			.mui-views,
 			.mui-view,
 			.mui-pages,
@@ -29,26 +29,32 @@
 				height: 100%;
 				background-color: #efeff4;
 			}
+			
 			.mui-pages {
 				top: 46px;
 				height: auto;
 			}
+			
 			.mui-scroll-wrapper,
 			.mui-scroll {
 				background-color: #efeff4;
 			}
+			
 			.mui-page.mui-transitioning {
 				-webkit-transition: -webkit-transform 200ms ease;
 				transition: transform 200ms ease;
 			}
+			
 			.mui-page-left {
 				-webkit-transform: translate3d(0, 0, 0);
 				transform: translate3d(0, 0, 0);
 			}
+			
 			.mui-ios .mui-page-left {
 				-webkit-transform: translate3d(-20%, 0, 0);
 				transform: translate3d(-20%, 0, 0);
 			}
+			
 			.mui-navbar {
 				position: fixed;
 				right: 0;
@@ -57,30 +63,36 @@
 				height: 44px;
 				background-color: #f7f7f8;
 			}
+			
 			.mui-navbar .mui-bar {
 				position: absolute;
 				background: transparent;
 				text-align: center;
 			}
+			
 			.mui-android .mui-navbar-inner.mui-navbar-left {
 				opacity: 0;
 			}
+			
 			.mui-ios .mui-navbar-left .mui-left,
 			.mui-ios .mui-navbar-left .mui-center,
 			.mui-ios .mui-navbar-left .mui-right {
 				opacity: 0;
 			}
+			
 			.mui-navbar .mui-btn-nav {
 				-webkit-transition: none;
 				transition: none;
 				-webkit-transition-duration: .0s;
 				transition-duration: .0s;
 			}
+			
 			.mui-navbar .mui-bar .mui-title {
 				display: inline-block;
 				position: static;
 				width: auto;
 			}
+			
 			.mui-page-shadow {
 				position: absolute;
 				right: 100%;
@@ -90,47 +102,60 @@
 				z-index: -1;
 				content: '';
 			}
+			
 			.mui-page-shadow {
 				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 			}
+			
 			.mui-navbar-inner.mui-transitioning,
 			.mui-navbar-inner .mui-transitioning {
 				-webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease;
 				transition: opacity 200ms ease, transform 200ms ease;
 			}
+			
 			.mui-page {
 				display: none;
 			}
+			
 			.mui-pages .mui-page {
 				display: block;
 			}
+			
 			.mui-page .mui-table-view:first-child {
 				margin-top: 15px;
 			}
+			
 			.mui-page .mui-table-view:last-child {
 				margin-bottom: 30px;
 			}
+			
 			.mui-table-view {
 				margin-top: 20px;
 			}
+			
 			.mui-table-view:after {
 				height: 0;
 			}
+			
 			.mui-table-view span.mui-pull-right {
 				color: #999;
 			}
+			
 			.mui-table-view-divider {
 				background-color: #efeff4;
 				font-size: 14px;
 			}
+			
 			.mui-table-view-divider:before,
 			.mui-table-view-divider:after {
 				height: 0;
 			}
+			
 			.mui-content-padded {
 				margin: 10px 0px;
 			}
+			
 			.mui-locker {
 				margin: 35px auto;
 				display: none;
@@ -150,23 +175,23 @@
 			</div>-->
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a id="newinfo" class="mui-navigate-right">
 						新消息通知
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a id="secret" class="mui-navigate-right">
 						隐私
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a id="general" class="mui-navigate-right">
 						通用
 					</a>
 				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top: 25px;">
-				<li class="mui-table-view-cell">
+				<li id="about" class="mui-table-view-cell">
 					<a id="about" class="mui-navigate-right">
 						关于黄山水务
 					</a>
@@ -192,6 +217,77 @@
 		mui.init({
 			swipeBack: true //启用右滑关闭功能
 		});
+
+		var wv4_subpages = ['content-pages/4_1_newinfo/son-wvsubpage-newinfo.html',
+			'content-pages/4_2_secret/son-wvsubpage-secret.html',
+			'content-pages/4_3_general/son-wvsubpage-general.html',
+			'content-pages/4_4_about/son-wvsubpage-about.html'
+		];
+
+		// 4-1 newinfo
+		mui(".mui-table-view").on('tap', '#newinfo', function() {
+			mui.openWindow({
+				url: wv4_subpages[0],
+				id: "newinfo-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+
+		// 4-2 secret
+		mui(".mui-table-view").on('tap', '#secret', function() {
+			mui.openWindow({
+				url: wv4_subpages[1],
+				id: "secret-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+
+		// 4-3 general
+		mui(".mui-table-view").on('tap', '#general', function() {
+			mui.openWindow({
+				url: wv4_subpages[2],
+				id: "general-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+
+		// 4-4 about
+		mui(".mui-table-view").on('tap', '#about', function() {
+			mui.openWindow({
+				url: wv4_subpages[3],
+				id: "about-page",
+				styles: {
+					top: '45px',
+					bottom: '51px'
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...' //等待对话框上显示的提示内容
+				}
+			});
+		});
+
 		document.getElementById("about").addEventListener('tap', function() {
 			//获得主页面的webview
 			var main = plus.webview.currentWebview().parent();

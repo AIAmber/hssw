@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
 		<title>问题反馈</title>
 		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
 		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.css" />
@@ -26,7 +27,7 @@
 			</form>
 			<div class="mui-content-padded"></div>
 			<div class="row mui-input-row">
-				<textarea id='question' class="mui-input-speech mui-input-clear question" placeholder="问题描述"></textarea>
+				<textarea id='issue-detail' class="mui-input-speech mui-input-clear question" placeholder="问题描述"></textarea>
 			</div>
 			<p>图片（选填，提供问题截图，总大小10M以下）</p>
 			<div id='image-list' class="row image-list"></div>
@@ -133,12 +134,14 @@
 			var btnInfoCancel = document.getElementById("issue-info-cancel");
 			btnInfoConfirm.addEventListener('tap', function(event) {
 				var datetime = "";
-				mui.ajax('http://120.76.145.62:8080/hssw-common-test/DashboardController/getClockTime', {
+				$.ajax({
+					url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/getClockTime', 
 					dataType: 'json', //服务器返回json格式数据
 					type: 'post', //HTTP请求类型
 					timeout: 1000, //超时时间设置为10秒；
 					headers: {
-						'Content-Type': 'application/json'
+						'Content-Type': 'application/json',
+						"Access-Control-Allow-Origin": "*"
 					},
 					async: false, // 同步
 					success: function(result) {
@@ -161,6 +164,49 @@
 					$("#feedback-time").text(datetime);
 				}, 500);
 				
+			});
+			
+			var btnSubmit = document.getElementById("submit");
+			btnSubmit.addEventListener('tap', function(event){
+				var titleBox = document.getElementById("issue-title");
+				var detailBox = document.getElementById("issue-detail");
+				var nameBox = document.getElementById("issue-name");
+				var phoneBox = document.getElementById("issue-phone");
+				var areaBox = document.getElementById("issue-cityResult3");
+				var addrBox = document.getElementById("issue-address");
+				
+				var fixDatas = [];
+				fixDatas.push(titleBox.value);
+				fixDatas.push(detailBox.value);
+				fixDatas.push(nameBox.value);
+				fixDatas.push(phoneBox.value);
+				fixDatas.push(areaBox.textContent);
+				fixDatas.push(addrBox.value);
+				
+				$.ajax({
+					url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/insertFixList',
+					dataType: 'json', //服务器返回json格式数据
+					method: 'post', //HTTP请求类型
+					timeout: 5000, //超时时间设置为10秒；
+					data:{
+						"hotlineTitle": fixDatas[0], 
+						"hotlineContent": fixDatas[1], 
+						"fixPerson": fixDatas[2], 
+						"fixPhone": fixDatas[3], 
+						"fixArea": fixDatas[4], 
+						"fixAddr": fixDatas[5]
+					},
+					async: false, // 同步
+					success: function(result) {
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						console.log("成共");
+						console.log(fixDatas);
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						//console.log(type);
+					}
+				});
 			});
 		</script>
 	</body>

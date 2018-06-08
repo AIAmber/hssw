@@ -5,7 +5,13 @@
       "font-awesome/css/font-awesome.css",
       "css/mui.min.css"
     ],
-    "refer": [],
+    "refer": [
+      "content-pages/3_4_testreport/son-wvsubpage-testreport.html",
+      "content-pages/3_2_longcheck/son-wvsubpage-longcheck.html",
+      "content-pages/3_3_billquery/son-wvsubpage-billquery.html",
+      "content-pages/3_1_waterservice/son-wvsubpage-waterservice.html",
+      "content-pages/3_5_hotline/son-wvsubpage-hotline.html"
+    ],
     "priority": 0
   },
   "tab-webview-subpage-about.html": {
@@ -28,7 +34,12 @@
       "js/mui.min.js",
       "css/mui.min.css"
     ],
-    "refer": [],
+    "refer": [
+      "content-pages/4_1_newinfo/son-wvsubpage-newinfo.html",
+      "content-pages/4_2_secret/son-wvsubpage-secret.html",
+      "content-pages/4_3_general/son-wvsubpage-general.html",
+      "content-pages/4_4_about/son-wvsubpage-about.html"
+    ],
     "priority": 0
   },
   "tab-webview-subpage-chat.html": {
@@ -42,14 +53,25 @@
       "img/carrousel/2.jpg",
       "img/carrousel/3.jpg"
     ],
-    "refer": [],
+    "refer": [
+      "content-pages/2_1_totalwork/son-wvsubpage-totalwork.html",
+      "content-pages/2_3_pipegis/son-wvsubpage-pipegis.html",
+      "content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html",
+      "content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html",
+      "content-pages/2_6_flowwatch/son-wvsubpage-flowwatch.html",
+      "content-pages/2_10_warninginfo/son-wvsubpage-warninginfo.html",
+      "content-pages/2_2_workwatch/son-wvsubpage-workwatch.html",
+      "content-pages/2_7_pumpstation/son-wvsubpage-pumpstation.html",
+      "content-pages/2_9_watercycle/son-wvsubpage-watercycle.html"
+    ],
     "priority": 0
   },
   "tab-webview-main.html": {
     "href": "tab-webview-main.html",
     "resources": [
       "css/mui.min.css",
-      "js/mui.min.js"
+      "js/mui.min.js",
+      "tab-webview-subpage-about.html"
     ],
     "refer": [
       "tab-webview-subpage-contact.html",
@@ -58,5 +80,30 @@
       "tab-webview-subpage-chat.html"
     ],
     "priority": 0
+  },
+  "login/login.html": {
+    "refer": [
+      "tab-webview-main.html"
+    ]
+  },
+  "content-pages/2_5_presurewatch/son-wvsubpage-presurewatch.html": {
+    "refer": [
+      "content-pages/2_5_presurewatch/subpages/test.html"
+    ]
+  },
+  "content-pages/2_6_flowwatch/son-wvsubpage-flowwatch.html": {
+    "refer": [
+      "content-pages/2_6_flowwatch/subpages/test.html"
+    ]
+  },
+  "content-pages/2_7_pumpstation/son-wvsubpage-pumpstation.html": {
+    "refer": [
+      "content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html"
+    ]
+  },
+  "content-pages/2_9_watercycle/son-wvsubpage-watercycle.html": {
+    "refer": [
+      "content-pages/2_9_watercycle/subpages/test.html"
+    ]
   }
 }

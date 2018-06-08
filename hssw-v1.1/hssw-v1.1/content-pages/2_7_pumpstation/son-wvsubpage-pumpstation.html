@@ -17,12 +17,12 @@
 		<div>
 			<ul class="mui-table-view">
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" style="text-decoration: none;">
 						<i class="fa fa-compass" aria-hidden="true"></i> 徽师泵站
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right">
+					<a class="mui-navigate-right" style="text-decoration: none;">
 						<i class="fa fa-compass" aria-hidden="true"></i> 循环经济园
 					</a>
 				</li>
@@ -35,6 +35,21 @@
 			mui.Back = function() {
 				plus.webview.currentWebview().close();
 			};
+			
+			mui(".mui-table-view").on('tap', '.mui-navigate-right', function() {
+				mui.openWindow({
+					url: "/content-pages/2_4_waterproduct/son-wvsubpage-waterproduct.html",
+					id: "mui-navigate-right-page",
+					styles: {
+						top: '45px',
+						bottom: '51px'
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
 		</script>
 	</body>
 

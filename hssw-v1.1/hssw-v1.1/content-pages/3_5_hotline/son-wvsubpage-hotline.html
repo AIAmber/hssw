@@ -1,27 +1,213 @@
 <!doctype html>
-<html>
+<html lang="en" class="feedback">
 
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="../../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="../../plugins/bootstrap/css/bootstrap.min.css" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<title>问题反馈</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.poppicker.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/feedback.css" />
 	</head>
 
 	<body>
-		<div class="title">
-			这是 [黄山水务-热线工单-3-5] 选项卡，该页面展示"热线工单"。
-			
-			<p>&nbsp;</p>
-			<p>服务模块正在开发中...</p>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<button id="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">发送</button>
+			<h1 class="mui-title">热线工单</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>标题</label>
+					<input id='issue-title' type="text" class="mui-input-speech mui-input-clear" placeholder="请填写标题" />
+				</div>
+			</form>
+			<div class="mui-content-padded"></div>
+			<div class="row mui-input-row">
+				<textarea id='issue-detail' class="mui-input-speech mui-input-clear question" placeholder="热线工单内容"></textarea>
+			</div>
+			<p>图片（选填，提供问题截图，总大小10M以下）</p>
+			<div id='image-list' class="row image-list"></div>
+			<div class="mui-content-padded"></div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-collapse mui-active">
+					<a class="mui-navigate-right" href="#">用户信息</a>
+					<div class="mui-collapse-content">
+						<form class="mui-input-group">
+							<div class="mui-input-row">
+								<label>姓名</label>
+								<input id='issue-name' type="text" class="mui-input-clear" placeholder="（请填写姓名）" />
+							</div>
+							<div class="mui-input-row">
+								<label>手机号</label>
+								<input id='issue-phone' type="text" class="mui-input-clear" placeholder="（请务必填写，方便我们联系你）" />
+							</div>
+							<div class="mui-input-row">
+								<label>用户编号</label>
+								<input id='issue-id' type="text" class="mui-input-clear" placeholder="（请填写用户编号）" />
+							</div>
+							<div class="mui-input-row">
+								<label>发生区域</label>
+								<button id='issue-showCityPicker3' class="mui-btn mui-btn-block" style="width: 60%; float: left; padding: 6px; margin-top: 6px; font-size: 12px; text-align: center;" type='button'>请选择区域</button>
+							</div>
+							<div class="mui-input-row">
+								<label>&nbsp;</label>
+								<div id='issue-cityResult3' class="ui-alert" style="margin: 10px;"></div>
+							</div>
+							<div class="mui-input-row">
+								<label>发生地址</label>
+								<input id='issue-address' type="text" class="mui-input-clear" placeholder="（请填写发生地址）" />
+							</div>
+							<div class="mui-button-row">
+								<button id="issue-info-confirm" class="mui-btn mui-btn-primary" type="button" onclick="return false;">保存</button>&nbsp;&nbsp;
+								<button id="issue-info-cancel" class="mui-btn mui-btn-danger" type="button" onclick="return false;">清空</button>
+							</div>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<div class="mui-content-padded">
+				<!--<div class="mui-inline">服务评分</div>
+				<div class="icons mui-inline" style="margin-left: 6px;">
+					<i data-index="1" class="mui-icon mui-icon-star"></i>
+					<i data-index="2" class="mui-icon mui-icon-star"></i>
+					<i data-index="3" class="mui-icon mui-icon-star"></i>
+					<i data-index="4" class="mui-icon mui-icon-star"></i>
+					<i data-index="5" class="mui-icon mui-icon-star"></i>
+				</div>
+				<br />-->
+				<br />
+				<div class="mui-inline">保存时间：</div>
+				<div id="feedback-time" class="mui-inline">2018-01-01 00:00:00</div>
+			</div><!--<br />-->
 		</div>
 		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.poppicker.js"></script>
+		<script src="../../js/mui.picker.js"></script>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/city.data-3.js"></script>
+		<script src="../../js/feedback.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			mui.init();
 			mui.Back = function() {
 				plus.webview.currentWebview().close();
 			};
+
+			// textarea 语音输入
+			mui.ready(function() {
+				mui('.mui-input-row textarea').input();
+			});
+
+			// mui 级联
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var issue_getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('issue-showCityPicker3');
+					var cityResult3 = doc.getElementById('issue-cityResult3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.innerText = issue_getParam(items[0], 'text') + " " + issue_getParam(items[1], 'text') + " " + issue_getParam(items[2], 'text');
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+			var btnInfoConfirm = document.getElementById("issue-info-confirm");
+			var btnInfoCancel = document.getElementById("issue-info-cancel");
+			btnInfoConfirm.addEventListener('tap', function(event) {
+				var datetime = "";
+				$.ajax({
+					url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/getClockTime', 
+					dataType: 'json', //服务器返回json格式数据
+					type: 'post', //HTTP请求类型
+					timeout: 1000, //超时时间设置为10秒；
+					headers: {
+						'Content-Type': 'application/json',
+						"Access-Control-Allow-Origin": "*"
+					},
+					async: false, // 同步
+					success: function(result) {
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						datetime = result.bean.datetime;
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						//console.log(type);
+					}
+				});
+
+				mui.plusReady(function() {
+					plus.nativeUI.showWaiting("正在保存..."); //这里是开始显示原生等待框
+				});
+				setTimeout(function() {
+					mui.plusReady(function() {
+						plus.nativeUI.closeWaiting(); //这里监听页面是否加载完毕，完成后关闭等待框
+					});
+					$("#feedback-time").text(datetime);
+				}, 500);
+				
+			});
+			
+			var btnSubmit = document.getElementById("submit");
+			btnSubmit.addEventListener('tap', function(event){
+				var titleBox = document.getElementById("issue-title");
+				var detailBox = document.getElementById("issue-detail");
+				var nameBox = document.getElementById("issue-name");
+				var phoneBox = document.getElementById("issue-phone");
+				var areaBox = document.getElementById("issue-cityResult3");
+				var addrBox = document.getElementById("issue-address");
+				
+				var fixDatas = [];
+				fixDatas.push(titleBox.value);
+				fixDatas.push(detailBox.value);
+				fixDatas.push(nameBox.value);
+				fixDatas.push(phoneBox.value);
+				fixDatas.push(areaBox.textContent);
+				fixDatas.push(addrBox.value);
+				
+				$.ajax({
+					url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/insertFixList',
+					dataType: 'json', //服务器返回json格式数据
+					method: 'post', //HTTP请求类型
+					timeout: 5000, //超时时间设置为10秒；
+					data:{
+						"hotlineTitle": fixDatas[0], 
+						"hotlineContent": fixDatas[1], 
+						"fixPerson": fixDatas[2], 
+						"fixPhone": fixDatas[3], 
+						"fixArea": fixDatas[4], 
+						"fixAddr": fixDatas[5]
+					},
+					async: false, // 同步
+					success: function(result) {
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						console.log("成共");
+						console.log(fixDatas);
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						//console.log(type);
+					}
+				});
+			});
 		</script>
 	</body>
 

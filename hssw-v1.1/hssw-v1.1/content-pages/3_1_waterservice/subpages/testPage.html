@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../plugins/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.css" />
+	</head>
+
+	<body>
+		<!--<div class="title">
+			这是 [黄山水务-监控-2-7] 选项卡，该页面展示"泵站监测"。
+		</div>-->
+		<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a id="mui-control-item1" class="mui-control-item mui-active" href="#item1mobile" style="text-decoration: none;">
+				巡检报修列表
+			</a>
+			<a id="mui-control-item2" class="mui-control-item" href="#item2mobile" style="text-decoration: none;">
+				巡检报修详情
+			</a>
+		</div>
+
+		<div id="item1mobile" class="mui-col-sm-12 mui-col-xs-12 mui-slider-item mui-control-content mui-active">
+			<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+				<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+					<!--<span style="font-size: 16px; font-weight: bold; margin-left: 150px;">列 表</span>-->
+				</div>
+				<div class="panel-body">
+					<!--<div id="warninginfo-test-1" style="height: 250px;">
+						<table class="table table-condensed table-hover">
+							<thead>
+								<tr>
+									<th style="border-bottom-color: #BFE2C2; text-align: left;">工单号</th>
+									<th style="border-bottom-color: #BFE2C2; text-align: right;">工单标题</th>
+								</tr>
+							</thead>
+							<tbody id="hotline-list" style="text-align: center;">
+								<tr class="hotline-line">
+									<td style="text-align: left;">201805180001</td>
+									<td style="text-align: right;">ceshi</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>-->
+
+					<div id="hotline-li">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right" style="text-decoration: none;">
+									<span>黄山市国金置业有限公司</span>
+									<p>088</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="item2mobile" class="mui-col-sm-12 mui-col-xs-12 mui-slider-item mui-control-content">
+			<div class="panel panel-default" style="border-radius: 2px; border-color: white; box-shadow: none;">
+				<div class="panel-heading" style="background-color: #f5f5f4; border-color: #f5f5f4;">
+					<!--<span style="font-size: 16px; font-weight: bold; margin-left: 150px;">详 情</span>-->
+				</div>
+				<div class="panel-body">
+					<div id="warninginfo-test-1" style="height: 250px;">
+						<table class="table table-condensed table-hover">
+							<thead>
+								<tr>
+									<th style="border-bottom-color: #BFE2C2; text-align: left; width: 100px;">项目</th>
+									<th style="border-bottom-color: #BFE2C2; text-align: right;">内容</th>
+								</tr>
+							</thead>
+							<tbody id="hotline-list" style="text-align: center;">
+								<tr>
+									<td style="text-align: left;">工单号</td>
+									<td id="ht-no" style="text-align: right;">201805180001</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">工单标题</td>
+									<td id="ht-title" style="text-align: right;">ceshi</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">工单内容</td>
+									<td id="ht-detail" style="text-align: right;">描述信息，描述信息，描述信息，描述信息。</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">相关图片</td>
+									<td id="ht-pic" style="text-align: right;">无</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">用户姓名</td>
+									<td id="ht-username" style="text-align: right;">李仁杰</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">手机号</td>
+									<td id="ht-phone" style="text-align: right;">13053235210</td>
+								</tr>
+								<!--<tr>
+									<td style="text-align: left;">用户编号</td>
+									<td id="ht-userno" style="text-align: right;">111</td>
+								</tr>-->
+								<tr>
+									<td style="text-align: left;">发生区域</td>
+									<td id="ht-area" style="text-align: right;">安徽省，合肥市，瑶海区</td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">发生地址</td>
+									<td id="ht-addr" style="text-align: right;">学校</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../../../js/mui.min.js"></script>
+		<script src="../../../js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.Back = function() {
+				plus.webview.currentWebview().close();
+			};
+
+			$.ajax({
+				url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/hotlineList',
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				timeout: 1000, //超时时间设置为10秒；
+				headers: {
+					'Content-Type': 'application/json',
+					"Access-Control-Allow-Origin": "*"
+				},
+				async: false, // 同步
+				success: function(result) {
+					//服务器返回响应，根据响应结果，分析是否登录成功；
+					var hotlineNo = [];
+					var hotlineTitle = [];
+					var tableContent = "";
+					var liContent = "";
+
+					for(var i = 0; i < result.bean.length; i++) {
+						hotlineNo.push(result.bean[i].HL_NO);
+						hotlineTitle.push(result.bean[i].HL_TITLE);
+
+						//						tableContent += "<tr><td class=\"hotline-no\" style=\"text-align: left;\">" + result.bean[i].HL_NO + "</td><td class=\"hotline-no\" style=\"text-align: right;\">" + result.bean[i].HL_TITLE + "</td></tr>";
+						liContent += "<ul class=\"mui-table-view\"><li class=\"mui-table-view-cell\"><a id=\"" + result.bean[i].HL_NO + "\" class=\"mui-navigate-right\" style=\"text-decoration: none;\"><span style=\"font-weight: 900;\">" + result.bean[i].HL_TITLE + "</span><p>" + result.bean[i].HL_NO + "</p></a></li></ul>"
+					}
+
+					//					$("#hotline-list").html(tableContent);
+					$("#hotline-li").html(liContent);
+
+				},
+				error: function(xhr, type, errorThrown) {
+					//异常处理；
+					//console.log(type);
+				}
+			});
+
+			mui(".mui-table-view").on('tap', '.mui-navigate-right', function() {
+				var item2mobile = document.getElementById("mui-control-item2");
+				mui.trigger(item2mobile, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-segmented-control>.mui-control-item.mui-active");
+				var currentList = document.querySelector("#item1mobile");
+				var item2mobileList = document.querySelector("#item2mobile");
+				if(item2mobile !== current) {
+					current.classList.remove('mui-active');
+					currentList.classList.remove('mui-active');
+					item2mobile.classList.add('mui-active');
+					item2mobileList.classList.add('mui-active');
+				}
+				$.ajax({
+					url: 'http://120.76.145.62:8080/hssw-common-test/DashboardController/hotlineDetail',
+					data: {
+						"hotlineNo": "201805180001"
+					},
+					dataType: 'json', //服务器返回json格式数据
+					type: 'post', //HTTP请求类型
+					timeout: 1000, //超时时间设置为10秒；
+					headers: {
+						'Content-Type': 'application/json',
+						"Access-Control-Allow-Origin": "*"
+					},
+					async: false, // 同步
+					success: function(result) {
+						//服务器返回响应，根据响应结果，分析是否登录成功；
+						if(result.bean.length > 0) {
+							var hotlineNo = result.bean[0].HL_NO;
+							var hotlineTitle = result.bean[0].HL_TITLE;
+							var hotlineDetail = result.bean[0].HL_CONTENT;
+							var hotlineUsername = result.bean[0].HL_FPERSON;
+							var hotlinePhone = result.bean[0].HL_FPHONE;
+							//var hotlineUserId = "";
+							var hotlineArea = result.bean[0].HL_AREA;
+							var hotlineAddr = result.bean[0].HL_ADDR;
+							console.log(result.bean);
+							
+							$("#ht-no").text(hotlineNo);
+							$("#ht-title").text(hotlineTitle);
+							$("#ht-detail").text(hotlineDetail);
+							$("#ht-username").text(hotlineUsername);
+							$("#ht-phone").text(hotlinePhone);
+							$("#ht-area").text(hotlineArea);
+							$("#ht-addr").text(hotlineAddr);
+						}
+
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						//console.log(type);
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

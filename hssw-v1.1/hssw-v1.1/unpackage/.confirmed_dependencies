@@ -10,7 +10,8 @@
       "content-pages/3_2_longcheck/son-wvsubpage-longcheck.html",
       "content-pages/3_3_billquery/son-wvsubpage-billquery.html",
       "content-pages/3_1_waterservice/son-wvsubpage-waterservice.html",
-      "content-pages/3_5_hotline/son-wvsubpage-hotline.html"
+      "content-pages/3_5_hotline/son-wvsubpage-hotline.html",
+      "content-pages/3_6_response/son-wvsubpage-response.html"
     ],
     "priority": 0
   },
@@ -104,6 +105,13 @@
   "content-pages/2_9_watercycle/son-wvsubpage-watercycle.html": {
     "refer": [
       "content-pages/2_9_watercycle/subpages/test.html"
+    ]
+  },
+  "content-pages/3_1_waterservice/son-wvsubpage-waterservice.html": {
+    "refer": [
+      "content-pages/3_1_waterservice/subpages/aPage.html",
+      "content-pages/3_1_waterservice/subpages/hotlinePage.html",
+      "content-pages/3_1_waterservice/subpages/testPage.html"
     ]
   }
 }

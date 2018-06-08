@@ -61,6 +61,36 @@ public class DashboardDao {
     }
 
     /**
+     * 查询hotlineList
+     *
+     * @param
+     * @return
+     * @throws IOException
+     */
+    public List<Map<String, Object>> hotlineList(){
+        StringBuffer sql = new StringBuffer();
+        sql.append(" SELECT h.HL_NO, h.HL_TITLE FROM t_hssw_hotline h");
+
+        return baseDao.findListBySql(sql.toString(), new Object[]{});
+    }
+
+    /**
+     * 查询hotlineList
+     *
+     * @param
+     * @return
+     * @throws IOException
+     */
+    public List<Map<String, Object>> hotlineDetail(String hotlineNo){
+        StringBuffer sql = new StringBuffer();
+        sql.append(" SELECT h.HL_NO, h.HL_TITLE, h.HL_CONTENT, h.HL_AREA, h.HL_ADDR, h.STATE, h.DEAL_TIME, h.CREATE_TIME, h.HL_FPERSON, h.HL_FPHONE ");
+        sql.append(" FROM t_hssw_hotline h");
+        sql.append(" WHERE h.HL_NO = ?");
+
+        return baseDao.findListBySql(sql.toString(), new Object[]{hotlineNo});
+    }
+
+    /**
      * 插入fixList
      *
      * @param hotlineId

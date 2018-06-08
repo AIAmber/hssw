@@ -10,5 +10,9 @@ public interface DashboardService {
 
     public EditJson fixList(String userId);
 
+    public EditJson hotlineList();
+
+    public EditJson hotlineDetail(String hotlineNo);
+
     public EditJson insertFixList(String hotlineTitle, String hotlineContent, String fixPerson, String fixPhone, String fixArea, String fixAddr);
 }

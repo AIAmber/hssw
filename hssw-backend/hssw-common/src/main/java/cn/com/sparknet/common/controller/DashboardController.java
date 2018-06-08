@@ -101,7 +101,39 @@ public class DashboardController {
     }
 
     /**
-     * 查询fixList
+     * 查询hotlineList
+     *
+     * @param request
+     * @return url with json
+     * @throws Exception
+     */
+    @ResponseBody
+    @RequestMapping("/hotlineList")
+    public EditJson hotlineList(HttpServletRequest request, HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
+        return dashboardService.hotlineList();
+    }
+
+    /**
+     * 查询hotline详情
+     *
+     * @param request
+     * @return url with json
+     * @throws Exception
+     */
+    @ResponseBody
+    @RequestMapping("/hotlineDetail")
+    public EditJson hotlineDetail(HttpServletRequest request, HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
+        String hotlineNo = StringUtil.nullToEmpty(request.getParameter("hotlineNo"));
+
+        return dashboardService.hotlineDetail(hotlineNo);
+    }
+
+    /**
+     * 插入fixList
      *
      * @param request
      * @return url with json

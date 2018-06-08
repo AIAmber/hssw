@@ -3,7 +3,7 @@
 	"id": "H5FB87E24",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "黄山水务",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.1.6",/*应用版本名称*/
+		"name": "1.1.9",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "黄山水务-数字水务服务系统",/*应用描述信息*/
@@ -206,7 +206,8 @@
 					"content-pages/3_2_longcheck/son-wvsubpage-longcheck.html",
 					"content-pages/3_3_billquery/son-wvsubpage-billquery.html",
 					"content-pages/3_1_waterservice/son-wvsubpage-waterservice.html",
-					"content-pages/3_5_hotline/son-wvsubpage-hotline.html"
+					"content-pages/3_5_hotline/son-wvsubpage-hotline.html",
+					"content-pages/3_6_response/son-wvsubpage-response.html"
 				]
 			},
 			"tab-webview-subpage-about.html": {
@@ -320,6 +321,15 @@
 				"resources": [],
 				"refer": [
 					"content-pages/2_9_watercycle/subpages/test.html"
+				],
+				"priority": 0
+			},
+			"content-pages/3_1_waterservice/son-wvsubpage-waterservice.html": {
+				"resources": [],
+				"refer": [
+					"content-pages/3_1_waterservice/subpages/aPage.html",
+					"content-pages/3_1_waterservice/subpages/hotlinePage.html",
+					"content-pages/3_1_waterservice/subpages/testPage.html"
 				],
 				"priority": 0
 			}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../plugins/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.css" />
+	</head>
+
+	<body>
+		<!--<div class="title">
+			这是 [黄山水务-监控-2-7] 选项卡，该页面展示"泵站监测"。
+		</div>-->
+		<div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 一区(城东片)
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 二区(城西片)
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 三区(老城区)
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 四区(新区片)
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 天厚移交考验小区
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> WPD大口径水表
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 歙县自来水
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 2区(开发区)
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" style="text-decoration: none;">
+						<i class="fa fa-dot-circle-o" aria-hidden="true"></i> 超声波水表试用
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.Back = function() {
+				plus.webview.currentWebview().close();
+			};
+			
+			mui(".mui-table-view").on('tap', '.mui-navigate-right', function() {
+				mui.openWindow({
+					url: "./bPage.html",
+					id: "mui-navigate-right-page",
+					styles: {
+						top: '45px',
+						bottom: '51px'
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...' //等待对话框上显示的提示内容
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -115,6 +115,42 @@ public class DashboardServiceImpl implements DashboardService{
     }
 
     /**
+     * 查询hotlineList
+     *
+     * (测试, 未鉴权)
+     *
+     * @param
+     * @return json
+     * @throws Exception
+     */
+    @Override
+    public EditJson hotlineList(){
+        EditJson editJson = new EditJson();
+        editJson.setBean(dashboardDao.hotlineList());
+        editJson.setSuccess(true);
+
+        return editJson;
+    }
+
+    /**
+     * 查询fixList
+     *
+     * (测试, 未鉴权)
+     *
+     * @param
+     * @return json
+     * @throws Exception
+     */
+    @Override
+    public EditJson hotlineDetail(String hotlineNo){
+        EditJson editJson = new EditJson();
+        editJson.setBean(dashboardDao.hotlineDetail(hotlineNo));
+        editJson.setSuccess(true);
+
+        return editJson;
+    }
+
+    /**
      * 插入insertFixList
      *
      * @param

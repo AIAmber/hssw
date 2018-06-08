@@ -54,6 +54,10 @@
 				top: '45px',
 				bottom: '51px'
 			};
+			
+//			mui.Back = function() {
+//				plus.webview.currentWebview().close();
+//			};
 
 			var aniShow = {};
 
@@ -77,6 +81,25 @@
 			var title = document.getElementById("title");
 			//选项卡点击事件
 			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+//				var mainViews = plus.webview.all();
+//				for(var i=0; i<mainViews.length; i++){
+//					console.log("getURL " + mainViews[i].id);
+//				}
+
+//				var mainViews = plus.webview.getDisplayWebview();
+//				var pagesID = 1;
+//				for(var i=0; i<mainViews.length; i++){
+//					console.log("getURL " + mainViews[i].id);
+//					if(mainViews[i].id == "tab-webview-subpage-contact.html" || mainViews[i].id == "tab-webview-subpage-chat.html" || mainViews[i].id == "tab-webview-subpage-about.html" || mainViews[i].id == "tab-webview-subpage-setting.html"){
+//						pagesID = 1;
+//					} else {
+//						pagesID = 0;
+//					}
+//				}
+//				if( 0 == pagesID ){
+//					plus.webview.currentWebview().close();
+//				}
+				
 				var targetTab = this.getAttribute('href');
 				if(targetTab == activeTab) {
 					return;
